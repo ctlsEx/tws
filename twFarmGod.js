@@ -165,9 +165,7 @@ window.FarmGod.Library = (function () {
       .closest('td')
       .find('select')
       .first();
-    // Commented out the old version of the code, updated in April 2024
-    // The old version did not count the number of pages in the loot assistant properly when there were more than 15 or so due to the way the UI changes to not show all pages
-    // let navLength = ($html.find('#am_widget_Farm').length > 0) ? $html.find('#plunder_list_nav').first().find('a.paged-nav-item').length : ((navSelect.length > 0) ? navSelect.find('option').length - 1 : $html.find('.paged-nav-item').not('[href*="page=-1"]').length);
+
     let navLength =
       $html.find('#am_widget_Farm').length > 0
         ? parseInt(
@@ -395,35 +393,34 @@ window.FarmGod.Translation = (function () {
     },
     int: {
       missingFeatures:
-        'Script requires a premium account and loot assistent!',
+        'O script requer uma conta premium e o assistente de farms!',
       options: {
-        title: 'FarmGod Options',
+        title: 'Opções do FarmGod',
         warning:
-          '<b>Warning:</b><br>- Make sure A is set as your default microfarm and B as a larger microfarm<br>- Make sure the farm filters are set correctly before using the script',
+          '<b>Atenção:</b><br>- Certifique-se de que o modelo "A" está definido como seu microfarm padrão e "B" como um microfarm maior<br>- Certifique-se de que os filtros de farm estão configurados corretamente antes de usar o script',
         filterImage:
           'https://higamy.github.io/TW/Scripts/Assets/farmGodFilters.png',
-        group: 'Send farms from group:',
-        distance: 'Maximum fields for farms:',
-        time: 'How much time in minutes should there be between farms:',
-        losses: 'Send farm to villages with partial losses:',
-        maxloot: 'Send a B farm if the last loot was full:',
-        newbarbs: 'Add new barbs te farm:',
-        button: 'Plan farms',
+        group: 'Enviar farms a partir do grupo:',
+        distance: 'Distância máxima (em campos) para farms:',
+        time: 'Intervalo de tempo entre farms (em minutos):',
+        losses: 'Enviar farm para vilas com possibilidade de perdas parciais:',
+        maxloot: 'Enviar o modelo B se o saque anterior foi completo:',
+        newbarbs: 'Adicionar novas vilas bárbaras:',
+        button: 'Planejar farms',
       },
       table: {
         noFarmsPlanned:
-          'No farms can be sent with the specified settings.',
-        origin: 'Origin',
-        target: 'Target',
-        fields: 'fields',
+          'Não é possível enviar farms com as configurações especificadas.',
+        origin: 'Origem',
+        target: 'Alvo',
+        fields: 'Campos',
         farm: 'Farm',
-        goTo: 'Go to',
+        goTo: 'Ir para',
       },
       messages: {
-        villageChanged: 'Successfully changed village!',
-        villageError:
-          'All farms for the current village have been sent!',
-        sendError: 'Error: farm not send!',
+        villageChanged: 'Aldeia alterada com sucesso!',
+        villageError: 'Todos os farms da aldeia atual já foram enviados!',
+        sendError: 'Erro: farm não enviado!',
       },
     },
   };
